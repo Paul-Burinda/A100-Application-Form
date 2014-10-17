@@ -29,14 +29,21 @@
 	include "admin/db_conn.php";
 	$dbh = dbconn();
 
-	?>
+
+		<!-- PHP to pull Cohort Dropdown Options -->
+		<?php
+			include "resources/cred_int.php";
+		?>
 
 
-	<div class="container-fluid">
 
-		<div class="row centered">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bottomMargin">
-				<h1>Apprentice Applications</h1>
+		<div class="container-fluid">
+
+			<div class="row centered">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bottomMargin">
+					<h1>Apprentice Applications</h1>
+				</div>
+
 			</div>
 		</div>
 
@@ -50,9 +57,11 @@
 			<div class="row form-signin">
 
 				<form action="resources/existing_applicant.php" method="post" class="form-signin" role="form">
+
 					<h3 class="form-signin-heading">Returning Applicants</h3>
 					<input type="email" class="form-control" placeholder="Email address" name="emailLogin" required autofocus>
 					<input type="password" class="form-control" placeholder="Password" name="passwordLogin" required>
+
 
 
 
@@ -72,4 +81,6 @@
 
 		</body>
 
-		</html>
+
+</html>
+
