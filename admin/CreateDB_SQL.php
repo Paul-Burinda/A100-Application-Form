@@ -314,14 +314,14 @@ function Recreate_DB(){
 
 function populatePostArray(){
 	$statement= Array (
-		[first_name] => Paul
-		[last_name] => Burinda
-		[email] => paul.burinda@gmail.com
-		[password] => password
-		[school_id] => Southern Connecticut State University
-		[major] => Computer Science
-		[graduation_date] => January 2015
-		[cohort_name] => Cohort 6 - Spring 2015
+		"first_name" => "Paul",
+		"last_name" => "Burinda",
+		"email" => "paul.burinda@gmail.com",
+		"password" => password,
+		"school_id" => Southern Connecticut State University,
+		"major" => Computer Science,
+		"graduation_date" => January 2015,
+		"cohort_name" => Cohort 6 - Spring 2015,
 		[street_address] => 1123123
 		[city] => West Haven
 		[state] => Connecticut
