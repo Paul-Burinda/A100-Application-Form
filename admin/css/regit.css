@@ -1,0 +1,52 @@
+
+/* Centre the form within the page */
+form {
+    padding: 50px;
+    margin: 0 auto;
+    width:459px;
+}
+
+/* Style the text boxes  */
+input, textarea {
+    width:          439px;
+    height:         27px;
+    background:     #efefef;            /* gives the text boxes a grayish color */
+    border:         1px solid #dedede;  /* makes the border of the boxes grayish (similar to the fill color */
+    padding:        5px;                /* padding inside the text boxes */
+    margin-top:     5px;                /* What does this do? */
+    font-size:      0.9em;              /* What does this do? */
+    color:          #3a3a3a;            /* What does this do? */
+    border-radius:  5px;                /* gives it rounded corners */
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+}
+
+input:focus, textarea:focus {
+    border:         1px solid #97d6eb;  /* the text area that currently holds focus is given a border that is dark gray with a tint of green */
+}
+
+section {
+    margin: 2%;
+    padding: 2%;
+    vertical-align: top;
+    display: inline-block;
+    width: 54.5%;
+    font-family: sans-serif;
+    font-size: 85%;
+    text-align: top;
+}
+
+/* Style the submit button */
+#submit {
+    width:          127px;
+    height:         48px;
+    background:     #696969;            /* gives the submit box a grayish color */
+
+    border:         none;
+    margin-top:     20px;               /* overhead padding */
+    cursor:         pointer;            /* changes the cursor icon that appears when you hover over the submit button */
+}
+
+#submit:hover {
+    opacity:        0.9;
+}
