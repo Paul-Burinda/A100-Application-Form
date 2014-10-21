@@ -9,6 +9,9 @@
 		applicants.legal_status, schedules.weekly_hours, schedules.commitments, experiences.programming_option,
 		experiences.work_option, experiences.job_title, experiences.front_end_experience, experiences.lamp_stack_experience,
 		experiences.mobile_experience, experiences.cms_experience, experiences.other_experience, materials.additional_info,
+		referrals.referral_1, referrals.referral_2, referrals.referral_3, referrals.referral_4, referrals.referral_5,
+		referrals.referral_6, referrals.referral_7, referrals.referral_8, referrals.referral_9, referrals.referral_10,
+		referrals.referral_11,
 		applications.is_complete
 		FROM applications
 		INNER JOIN applicants ON applications.applicant_id=applicants.applicant_id
