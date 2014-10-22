@@ -99,7 +99,7 @@ function populateTables(){
 		(NULL, 'password', NULL, 'Password', NULL, NULL, '1', '3', 'password', '1', '1', 'identity'),
 		(NULL, 'school_id', NULL, 'Please list your most recent educational institution, your major, and the date of your graduation (or anticipated graduation).', 'Select School', 'School', '2', '1', 'schools', '1', '1', 'applicants'),
 		(NULL, 'major', NULL, NULL, NULL, 'Major', '2', '1', NULL, '1', '1', 'applicants'),
-		(NULL, 'graduation_date', NULL, NULL, '[Month], [Year]', 'Graduation Date', '2', '1', NULL, '1', '1', 'applicants'),
+		(NULL, 'graduation_date', NULL, NULL, ''Month', 'Year'', 'Graduation Date', '2', '1', NULL, '1', '1', 'applicants'),
 		(NULL, 'street_address', NULL, 'Address', NULL, 'Street Address', '2', '5', NULL, '1', '1', 'applicants'),
 		(NULL, 'city', NULL, NULL, NULL, 'City', '2', '6', NULL, '1', '1', 'applicants'),
 		(NULL, 'state', NULL, NULL, NULL, 'State', '2', '7', 'states', '1', '1', 'applicants'),
@@ -317,45 +317,43 @@ function populatePostArray(){
 		"first_name" => "Paul",
 		"last_name" => "Burinda",
 		"email" => "paul.burinda@gmail.com",
-		"password" => password,
-		"school_id" => Southern Connecticut State University,
-		"major" => Computer Science,
-		"graduation_date" => January 2015,
-		"cohort_name" => Cohort 6 - Spring 2015,
-		[street_address] => 1123123
-		[city] => West Haven
-		[state] => Connecticut
-		[zipcode] => 06516
-		[phone_number] => 1234567890
-		[linkedin] => NONE
-		[portfolio] => NONE
-		[age_check] => 1
-		[legal_status] => 3
-		[referral_1] => 5
-		[referral_2] => 6
-		[referral_3] => 7
-		[referral_4] => 8
-		[referral_5] => 9
-		[referral_6] => 10
-		[referral_7] => 11
-		[referral_8] => Bob
-		[referral_9] => Fischer
-		[referral_10] => 14
-		[referral_11] => Krishna
-		[weekly_hours] => 15
-		[commitments] => Unavailable Saturday
-		[programming_option] => 17
-		[work_option] => 22
-		[job_title] => Mr. Awesome
-		[front_end_experience] => Built Webpage
-		[lamp_stack_experience] => Building form
-		[cms_experience] => None
-		[mobile_experience] => Very little
-		[other_experience] => Hire me for relevant info
-		[reference_list] => Joe Smith
-		[additional_info] => Do it!
-		[submit] => submit )
-
-
+		"password" => 'password',
+		"school_id" => 'Southern Connecticut State University',
+		"major" => 'Computer Science',
+		"graduation_date" => 'January 2015',
+		"cohort_name" => 'Cohort 6 - Spring 2015',
+		'street_address' => 1123123,
+		'city' => 'West Haven',
+		'state' => 'Connecticut',
+		'zipcode' => 06516,
+		'phone_number' => 1234567890,
+		'linkedin' => 'NONE',
+		'portfolio' => 'NONE',
+		'age_check' => 1,
+		'legal_status' => 3,
+		'referral_1' => 5,
+		'referral_2' => 6,
+		'referral_3' => 7,
+		'referral_4' => 8,
+		'referral_5' => 9,
+		'referral_6' => 10,
+		'referral_7' => 11,
+		'referral_8' => 'Bob',
+		'referral_9' => 'Fischer',
+		'referral_10' => 14,
+		'referral_11' => 'Krishna',
+		'weekly_hours' => 15,
+		'commitments' => 'Unavailable Saturday',
+		'programming_option' => 17,
+		'work_option' => 22,
+		'job_title' => 'Mr. Awesome',
+		'front_end_experience' => 'Built Webpage',
+		'lamp_stack_experience' => 'Building form',
+		'cms_experience' => 'None',
+		'mobile_experience' => 'Very little',
+		'other_experience' => 'Hire me for relevant info',
+		'reference_list' => 'Joe Smith',
+		'additional_info' => 'Do it!',
+		'submit' => 'submit' );
 }
 ?>

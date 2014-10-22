@@ -1,10 +1,15 @@
 Thumbs.db
 .DS_Store
 
-admin/code_lab.php
+admin/resources/db_conn.php
+admin/resources/cred_admin.php
+
+resources/cred_user.php
+resources/db_conn.php
+
+resources/cred_int.php
 admin/cred_admin.php
 admin/dev
-resources/cred_int.php
-resources/cred_user.php
+
 */uploads
 

@@ -1,9 +1,10 @@
 <?php
     include "db_conn.php";
-    include "CreateDB_SQL.php";
+    include "php_func/CreateDB_SQL.php";
 
     $dbh = dbconn();
 
+    //use an array to clean this up
     $dropSql = $dbh->prepare(Drop_DB1());
     $dropSql->execute();
     $dropSql = $dbh->prepare(Drop_DB2());
