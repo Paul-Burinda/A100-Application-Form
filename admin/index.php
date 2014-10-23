@@ -7,7 +7,7 @@
 
     <meta http-equiv="Content-Type" content = "text/html; charset=utf-8">
 
-    <link rel = "stylesheet" href="css/regit.css" >
+    <link rel = "stylesheet" href="resources/css/regit.css" >
 
     <!-- Title -->
     <title> Admin Login</title>
@@ -18,16 +18,15 @@
         <!-- Input Field -->
         <form action="auth.php" method="post">
             <label>Name</label>
-            <input id = "username" name="username" type="text" placeholder="Type Username Here" required autofocus>
+            <input id = "firstname" name="firstname" type="text" placeholder="Type Username Here" required autofocus>
 
             <label>Password</label>
             <input id = "password" name="password" type="password" placeholder="Type Password Here" required autocomplete="off" >
 
-            <input id="submit" name="login" type="submit" value="submit">
+            <input id="submit" name="login" type="submit" value="login">
 
             <!-- In Testing: The Use of Ajax to create a more dynamic experience -->
             <!-- <button id = "login">Click Me to submit</button> -->
         </form>
     </section>
-    <script src="js/main.js" type="text/javascript"></script>
 </html>

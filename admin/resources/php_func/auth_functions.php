@@ -48,4 +48,9 @@
         }
 
     }
+
+    function logout(){
+        $_SESSION['username'] = "";
+        $_SESSION['role_id'] = "";
+    }
 ?>

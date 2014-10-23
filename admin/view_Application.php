@@ -2,11 +2,11 @@
     session_start();
     session_regenerate_id();
 
-    if (isset($_SESSION["userid"]) && isset($_SESSION["username"])){
+    if (($_SESSION["role_id"] == 1) && isset($_SESSION["username"])){
 
     }else{
         session_destroy();
-        header("Location:/code_lab/2ndProject/admin/admin_login.php");
+        header("Location:/code_lab/2ndProject/admin/index.php");
     }
 ?>
 
