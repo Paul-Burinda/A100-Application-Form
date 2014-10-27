@@ -27,6 +27,9 @@
 
 					$_POST['role_id']=1;
 
+					echo "hello";
+					print_r($_POST);
+
 					try{
 
 						if(empty($_POST["email"])){
@@ -101,7 +104,7 @@
 								foreach ($row as $col => $value) {
 									if($col == "Field"){
 										$submitSqlField .= $value;
-										$fieldval = $value; 
+										$fieldval = $value;
 									} else if ($col == "Type") {
 										$type = $value;
 									}
@@ -111,14 +114,14 @@
 									$PrimKey = $fieldval;
 								}
 
-								if(empty($_POST[$fieldval])) {  
+								if(empty($_POST[$fieldval])) {
 									if($fieldval == "is_complete"){
 										$submitSqlRecord .= "\"".((int)$_POST[$fieldval])."\"";
 									} else {
 										$submitSqlRecord .= " NULL";
 					        			$sqlFirst++;
 									}
-					     
+
 						        } else {
 						        	if($submitSqltable !== "applications"){
 						        		$submitSqlRecord .= " ?";
@@ -127,7 +130,7 @@
 						        	} else {
 						        		$submitSqlRecord .= "\"".$_POST[$fieldval]."\"";
 						        	}
-						        }	
+						        }
 							}
 
 							$submitSql = "INSERT INTO ".$submitSqltable."(" . $submitSqlField
@@ -141,7 +144,7 @@
 									}
 								}
 							}
-							
+
 							if($insert->execute()){
 								if($submitSqltable != "applications"){
 									$_POST[$PrimKey] = $dbh->lastInsertId();

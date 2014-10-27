@@ -1,12 +1,12 @@
 <?php
 
 	function getApplication(){
-		$SQL = "SELECT users.user_id, users.first_name, users.last_name, users.email, applicants.major, 
-		applicants.school_id, applicants.graduation_date, applicants.street_address, applicants.city, applicants.state_id,
+		$SQL = "SELECT users.user_id, users.first_name, users.last_name, users.email, applicants.major,
+		applicants.school_name, applicants.graduation_date, applicants.street_address, applicants.city, applicants.state_name,
 		applicants.zipcode, applicants.phone_number, applicants.linkedin, applicants.portfolio, applicants.age_check,
 		applicants.legal_status, schedules.weekly_hours, schedules.commitments, experiences.programming_option,
 		experiences.work_option, experiences.job_title, experiences.front_end_experience, experiences.lamp_stack_experience,
-		experiences.mobile_experience, experiences.cms_experience, experiences.other_experience, 
+		experiences.mobile_experience, experiences.cms_experience, experiences.other_experience,
 		referrals.referral_1, referrals.referral_2, referrals.referral_3, referrals.referral_4, referrals.referral_5,
 		referrals.referral_6, referrals.referral_7, referrals.referral_8, referrals.referral_9, referrals.referral_10,
 		referrals.referral_11,

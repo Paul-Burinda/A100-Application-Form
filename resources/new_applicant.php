@@ -13,19 +13,8 @@
 	<!-- Signin stylesheet -->
 	<link href="../public_html/css/signin.css" rel="stylesheet">
 
-	<!-- Custom CSS for Application Form -->
-	<link href="../public_html/css/form.css" rel="stylesheet">
-
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
-
-		<!-- Fonts -->
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,800italic,300italic,600italic,400,300,600,700,800|Montserrat:400,700' rel='stylesheet' type='text/css'>
-		<link href="public_html/css/font-awesome.min.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,800italic,300italic,600italic,400,300,600,700,800|Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link href="public_html/css/font-awesome.min.css" rel="stylesheet">
 
 	</head>
 
@@ -40,7 +29,7 @@
 			</div>
 
 			<div class="row">
-				<form action="insert.php" method="post" enctype="multipart/form-data">
+				<form method="post" id ="new_applicant_form" enctype="multipart/form-data" action="handler" onsubmit="return validateMyForm();">
 
 					<?php
 
@@ -50,6 +39,7 @@
 
 
 					include "cred_int.php";
+					include "Insert_SQL.php";
 
 							//Create connection
 					$appCon = mysqli_connect(HOST, USER, PASSWORD, DATABASE_NAME);
@@ -59,9 +49,8 @@
 					}
 
 						//sorts content by section on sections.arrange
-					$qstnSql = "SELECT * FROM fields INNER JOIN sections 
-					ON fields.section_id=sections.section_id
-					where fields.section_id = " . $qsParams['section'] . " ORDER BY sections.arrange"; 
+					$qstnSql = getSectionSQL($qsParams['section']);
+
 					// print_r($qstnSql);
 					$qstnArray = mysqli_query($appCon, $qstnSql);
 
@@ -72,7 +61,7 @@
 						// checks if moving to a new section, if counter is less than section.arrange, print header and body if available
 						if($arrangeCounter<$row['arrange'])
 						{
-						
+
 							if($row['pre_text']==NULL && $row['post_text']==NULL)
 							{
 								echo "<h3>" . $row['section_name'] . "*</h3>";
@@ -97,7 +86,7 @@
 							$insideText = "";  //variable to hold inside text content/reduce need for " and '
 							$fieldName = $row['field_name'];  //variable to hold DB name content/reduce need for " and '
 							$fieldId = $row['field_id'];  //variable to hold DB name content/reduce need for " and '
-							
+
 							if($row['inside_text']!=NULL){
 								$insideText = $row['inside_text'];
 							}
@@ -108,35 +97,42 @@
 
 							switch ($row['options_target']){
 								case NULL:
-								echo "<input class='form-control' type='text' name='$fieldName' placeholder='$insideText'>";
+								echo "<input class='applicant-data form-control' type='text' name='$fieldName' placeholder='$insideText'>";
+								break;
+
+								case 'email':
+								echo "<input class='applicant-data form-control' type='email' id='email' name='$fieldName' placeholder='Valid email' required autofocus>";
 								break;
 
 								case 'textarea':
-								echo "</br><textarea class='form-control' name='$fieldName' placeholder='$insideText'></textarea>";
+								echo "</br><textarea class='applicant-data form-control' name='$fieldName' placeholder='$insideText'></textarea>";
 								break;
 
 								case 'password':
-								echo "<input class='form-control' type='".$row['options_target']."' name='$fieldName' placeholder='$insideText'>";
-								break;	
+								echo "<input class='applicant-data form-control' type='".$row['options_target']."' id ='psw1' name='$fieldName' placeholder=Password>";
+								echo "<h4> Verify Password </h4>";
+								echo "<input class='applicant-data form-control' type='".$row['options_target']."' id ='psw2' placeholder='Verify password'>";
+								echo "<p id=report_password></p>";
+								break;
 
 								case 'file':
-								echo "<input type='file' name=" . $fieldName . " id=" . $fieldName . "><br>";
+								echo "<input type='file' class='applicant-data' name=" . $fieldName . " id=" . $fieldName . "><br>";
 								break;
 
 								case 'question_options':
 									//handles multiple choice options reading from question_options table
-								$optnSql="SELECT * FROM fields INNER JOIN question_options 
+								$optnSql="SELECT * FROM fields INNER JOIN question_options
 								WHERE fields.field_name = '$fieldName' AND question_options.field_name='$fieldName'";
 								$optnArray = mysqli_query($appCon, $optnSql);
 
-								while($optnRow=mysqli_fetch_array($optnArray)){
+								while($optnRow=mysqli_fetch_array($optnArray)) {
 									$optnInputType = $optnRow['input_type'];
 										//$optnFieldId=$optnRow['field_id'];
 									$optnId=$optnRow['q_option_id'];
 									$optnName=$optnRow['option_name'];
-									if($optnInputType!=NULL){
-										echo "<input type='$optnInputType' name='$fieldName' value='$optnId'>$optnName";	
-									}else{echo "$optnName <input type='$optnInputType' name='$fieldName'>";}
+									if ($optnInputType != NULL) {
+										echo "<input type='$optnInputType' class='applicant-data' name='$fieldName' value='$optnId'>$optnName";
+									}
 									echo "</br>";
 								}
 								break;
@@ -146,7 +142,7 @@
 								$dropDownSql = "SELECT * FROM $targetTable";
 								$dropDownArray = mysqli_query($appCon,$dropDownSql);
 								echo "</br>";
-								echo "<select name='$fieldName'>";
+								echo "<select name='$fieldName' class='applicant-data'>";
 								echo "<option>Select a value</option>";
 								while($dropDownRow = mysqli_fetch_array($dropDownArray)){
 									//echo "test";
@@ -168,29 +164,15 @@
 								}
 							}
 						}
-								
+
 						?>
-						<div class="row form">
-							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 topMarginSmall bottomMargin">
-								<button class="btn btn-lg btn-primary btn-block" type="submit" name ="submit" Value ="submit">
-									Submit Completed Application
-								</button>
-								<button class="btn btn-lg btn-primary btn-block" type="submit" name ="save" Value ="save">
-									Save Application to Complete Later
-								</button>
-							</div>
-						</div>
+
 
 					</form>
 
 				</div>
 
 			</div>
-
-			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-			<!-- Include all compiled plugins (below), or include individual files as needed -->
-			<script src="public_html/js/bootstrap.js"></script>
 
 		</body>
 

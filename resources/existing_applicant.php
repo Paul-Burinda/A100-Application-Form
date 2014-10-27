@@ -53,25 +53,25 @@
 						}
 
 						//sorts content by section on sections.arrange
-						$qstnSql="SELECT * FROM fields INNER JOIN sections ON fields.section_id=sections.section_id 
-							ORDER BY sections.arrange"; 
+						$qstnSql="SELECT * FROM fields INNER JOIN sections ON fields.section_id=sections.section_id
+							ORDER BY sections.arrange";
 						$emailLogin = $_POST['emailLogin'];
 						$passwordLogin = $_POST['passwordLogin'];
 						//$cohortLogin = $_POST['cohortLogin'];
 						// echo $emailLogin . " " . $passwordLogin . " " . $cohortLogin;
 
 						//   !!! NOT MODULARIZED !!!
-						$backloadSql="SELECT * FROM applications   
-							INNER JOIN applicants ON applications.applicant_id = applicants.applicant_id 
+						$backloadSql="SELECT * FROM applications
+							INNER JOIN applicants ON applications.applicant_id = applicants.applicant_id
 						/*	INNER JOIN identity ON applications.identity_id = identity.identity_id */
 							INNER JOIN users ON applicants.user_id = users.user_id
 							INNER JOIN referrals ON applications.referral_id = referrals.referral_id
 							INNER JOIN schedules ON applications.schedule_id = schedules.schedule_id
 							INNER JOIN experiences ON applications.experience_id = experiences.experience_id
 							INNER JOIN materials ON applications.material_id = materials.material_id
-							
+
 						/*	WHERE identity.email = '" . $emailLogin . "' */
-							WHERE users.email = '" . $emailLogin . "' 
+							WHERE users.email = '" . $emailLogin . "'
 								AND users.password = '" . $passwordLogin . "'";
 						/*  AND applications.cohort_name = '" . $cohortLogin . "'                                          */
 						/*$qstnArray = mysqli_query($formCon, $qstnSql); */
@@ -153,9 +153,9 @@
 											echo "<input type='hidden' name=".$old." value='".$oldContent."'>";
 										}
 										elseif($row['options_target']=="question_options"){
-											
+
 											//handles multiple choice options reading from question_options table
-											$optnSql = "SELECT * FROM fields INNER JOIN question_options WHERE fields.field_name = '$fieldName' 
+											$optnSql = "SELECT * FROM fields INNER JOIN question_options WHERE fields.field_name = '$fieldName'
 												AND question_options.field_name='$fieldName'";
 											/*$optnArray = mysqli_query($formCon, $optnSql);*/
 											$optnArray = mysqli_query($appCon, $optnSql);
@@ -166,16 +166,19 @@
 												$optnOldContent = $backloadRow[$fieldName];
 												$optnId = $optnRow['q_option_id'];
 												$optnName = $optnRow['option_name'];
-												
+
 												if($optnInputType!=NULL){
-													echo "<input type='$optnInputType' name='$fieldName' value='$optnId' ";
-													if($optnOldContent==$optnId){
-														echo "checked";
+													if($optnInputType == 'text'){
+														echo "<input type='$optnInputType' name='$fieldName' value='$backloadRow[$fieldName]' >$optnName";
+													}elseif($optnInputType = 'radio') {
+														if($optnOldContent==$optnId){
+															echo "<input type='$optnInputType' name='$fieldName' value='$optnId' 'checked' >$optnName";
+														} else {
+															echo "<input type='$optnInputType' name='$fieldName' value='$optnId' >$optnName";
+														}
+
 													}
-													echo ">$optnName";	
-												}else{
-													echo "<input type='$optnInputType' name='$fieldName' ";
-													echo ">$optnName";
+
 												}
 												echo "</br>";
 											}
@@ -198,7 +201,7 @@
 												}
 											echo "</select>";
 										}
-										
+
 										echo "</br>";
 										if($row['post_text']!=NULL)
 										{
@@ -224,7 +227,7 @@
 					</div>
 
 				</form>
-			
+
 			</div>
 
 			<div class="row form">
