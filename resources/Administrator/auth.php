@@ -35,11 +35,11 @@ $password = $_POST['password'];
             $_SESSION['username'] = $firstname;
             $_SESSION['role_id'] = 1;
             echo "Success";
-            header("Location: /code_lab/2ndProject/admin/view_Application.php");
+            header("Location: ../Administrator/view_Application.php");
         }
         else{
             session_destroy();
-            header("Location: /code_lab/2ndProject/admin/index.php");
+            header("Location: ../Administrator/index.php");
         }
 
         //echo "We're working on it <br>";

@@ -20,24 +20,23 @@
 			<div class="row form">
 
 				<?php
-
 					include "../admin/db_conn.php";
-					include "cred_ext.php";
 					include "Insert_PDOParam.php";
 					include "Insert_SQL.php";
 
-						
-					 	try{	
+					print_r($_POST);
+
+
+					 	try{
 
 						$dbh = dbconn();
-						$sqlStmt = "SELECT user_id,applicant_id,referral_id,schedule_id,experience_id,material_id FROM applications INNER JOIN users 
-							ON applications.applicant_id = users.user_id
-       						WHERE users.email = '$_POST[email]'";
+						$sqlStmt = "SELECT user_id,applicant_id,referral_id,schedule_id,experience_id,material_id FROM applications INNER JOIN users
+							ON applications.applicant_id = users.user_id WHERE users.email = ".$_POST["email"];
 
        					$getKeys = $dbh->prepare($sqlStmt);
        					$getKeys->execute();
        					$theKeys = $getKeys->fetch(PDO::FETCH_ASSOC);
-       					
+
 
        					$user_id = $theKeys['user_id'];
        					$applicant_id = $theKeys['applicant_id'];
@@ -47,8 +46,8 @@
        					$material_id = $theKeys['material_id'];
 
        					$keyinfo = array('user_id','referral_id','schedule_id','experience_id','material_id','applicant_id');
-						 
-						
+
+
 
 					 	if(array_key_exists("submit", $_POST)){
 					 		$Required = $dbh->prepare(getReqFields());
@@ -108,37 +107,37 @@
 									if($col == "Field"){
 										if(!fnmatch("*" . "_id", $value)) {//strip out xxx_id fields
 										$submitSqlField .= $value;
-										$fieldval = $value; 
+										$fieldval = $value;
 										} else {
 											$submitSQLField = $submitSQLField;
 										}
-									} 
+									}
 								}//end 2nd ForEach
 
-								if(empty($_POST[$fieldval])) {  
+								if(empty($_POST[$fieldval])) {
 									if($fieldval == "is_complete"){
 										$submitSqlRecord .= "\"".((int)$_POST[$fieldval])."\"";
 									} else {
 					        			$sqlFirst++;
 									}
-					     
+
 						        } else {
 						        	if($submitSqltable !== "applications"){
-							        	$submitSqlRecord .= $fieldval . '=' . "'" .$_POST[$fieldval] . "'" . ","; 
+							        	$submitSqlRecord .= $fieldval . '=' . "'" .$_POST[$fieldval] . "'" . ",";
 						        	} else {
 						        		$submitSqlRecord .= "\"".$_POST[$fieldval]."\"";
-						        	} 
-						        }	
+						        	}
+						        }
 							}//end top Foreach
 
 							 $submitSqlRecord = rtrim($submitSqlRecord,", ");
-							 
-							 $submitSql = "UPDATE $submitSqltable SET $submitSqlRecord 
+
+							 $submitSql = "UPDATE $submitSqltable SET $submitSqlRecord
 				 				WHERE $submitSqltable.$keyinfo[$x] = '$user_id'";
-					
+
 
 							$update = $dbh->prepare($submitSql);
-							
+
 							if($update->execute()){
 								if($submitSqltable != "applications"){
 									$_POST[$PrimKey] = $dbh->lastInsertId();

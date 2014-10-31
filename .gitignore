@@ -4,8 +4,8 @@ Thumbs.db
 admin/resources/db_conn.php
 admin/resources/cred_admin.php
 
-resources/cred_user.php
-resources/db_conn.php
+*/cred_user.php
+*/db_conn.php
 
 resources/cred_int.php
 admin/cred_admin.php

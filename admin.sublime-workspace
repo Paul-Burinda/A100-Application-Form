@@ -1,0 +1,322 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"field",
+				"fieldval"
+			],
+			[
+				"submit",
+				"submitSqlRecord"
+			],
+			[
+				"submitS",
+				"submitSQLField"
+			],
+			[
+				"array_s",
+				"array_shift"
+			],
+			[
+				"mat",
+				"material_id"
+			],
+			[
+				"exp",
+				"experience_id"
+			],
+			[
+				"sch",
+				"schedule_id"
+			],
+			[
+				"ref",
+				"referral_id"
+			],
+			[
+				"the",
+				"theKeys"
+			],
+			[
+				"ex",
+				"execute"
+			],
+			[
+				"applicant",
+				"applicant_id"
+			],
+			[
+				"table",
+				"tableInfo"
+			],
+			[
+				"array",
+				"arrayCount"
+			],
+			[
+				"col",
+				"colName"
+			],
+			[
+				"tab",
+				"tableInfo"
+			],
+			[
+				"resu",
+				"resultCargo"
+			],
+			[
+				"repla",
+				"replacePrimary"
+			],
+			[
+				"replace",
+				"replacePrimaryColumn"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"role",
+				"role_id"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/admin/db_conn.php",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/admin.php",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/resources/Administrator/select.php",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/resources/new_applicant.php",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/public_html/js/section_form.js",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/section_form.html",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/resources/replace.php",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/resources/existing_applicant.php",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/public_html/js/password_verify.js",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/index.php",
+		"/home/mark/Documents/United_Resolutions/Good_Files/replace_before_remove_comments.php",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/resources/cred_user.php",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/resources/cred_int.php",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/resources/cred_ext.php",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/resources/Insert_SQL.php",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/resources/Insert_PDOParam.php",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/resources/replace_1021.php",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/resources/insert.php",
+		"/home/mark/Documents/United_Resolutions/File_Copies/replace_mwf.php",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/admin/CreateDB_SQL.php",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/admin/cred_admin.php",
+		"/var/log/apache2/error.log",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/resources/replace_mwf.php",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/resources/AdminPage_SQL.php",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/resources/db_conn.php",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/gitignore",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/cred_int.php",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/resources/cred_int.html",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/.gitignore",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/resources/New_applicant_2.php",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/Taiwo/New_applicant.php",
+		"/home/mark/Documents/United_Resolutions/Yan/a100-modify-files/new_applicant.php",
+		"/home/mark/Documents/United_Resolutions/Yan/existing_applicant.php",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/admin/create_database.php",
+		"/home/mark/Documents/United_Resolutions/File_Copies/replace.php",
+		"/home/mark/Documents/United_Resolutions/File_Copies/existing_applicant.php",
+		"/home/mark/Documents/United_Resolutions/A100-Application-Form/admin/SQL_Statement.php",
+		"/home/mark/Documents/A100/A100_Linear_Resolutions/index.php"
+	],
+	"find":
+	{
+		"height": 31.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"$submitSQLType",
+			"$insertValue",
+			"$insert",
+			"$sqlFirst",
+			"$value",
+			"$submitTableKey",
+			"cred",
+			"$col",
+			"$submitSqlField",
+			"$keyinfo",
+			"roll_id",
+			"submitSqltable",
+			"findDupSQL",
+			"findDupSQL()",
+			"getrequiredfields",
+			"dupContent",
+			"role_id",
+			"]",
+			"[",
+			"submitSqlRecord",
+			"submitSqlField",
+			"$submitSqlTable",
+			"key",
+			"name",
+			"$finfo",
+			"colName",
+			"dupContent",
+			"replacePrimary",
+			"$dupContent",
+			"where",
+			"cred",
+			"cohort",
+			"password",
+			"replace",
+			"$form",
+			"name",
+			"Please select an item",
+			"cohort",
+			"school",
+			"cohort",
+			"school_id",
+			"roll_id",
+			"update",
+			"existing",
+			"existing applicant",
+			"cohort",
+			"cohorts",
+			"cohort",
+			"db_conn"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "admin.sublime-project",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 235.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
