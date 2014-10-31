@@ -1,5 +1,5 @@
 <?php
-    include "db_conn.php";
+    include "../db_conn.php";
     include "php_func/CreateDB_SQL.php";
 
     $dbh = dbconn();
